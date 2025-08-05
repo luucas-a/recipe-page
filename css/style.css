@@ -1,0 +1,239 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-primaria: "Young Serif", serif;
+  --font-segundaria: "Outfit", sans-serif;
+
+  --cor-texto-01: #e4ded8;
+  --cor-texto-02: #5f574e;
+  --cor-bg-01: #f3e6d8;
+  --cor-bg-04: #f3ece5;
+  --cor-bg-02: #ffffff;
+  --cor-bg-03: #fff5fa;
+
+  --cor-destaque-01: #854632;
+  --cor-destaque-02: #7b284f;
+  --cor-destaque-03: #7b284f0a;
+}
+img {
+  width: 100%;
+  display: block;
+}
+
+.main-bg {
+  background-color: var(--cor-bg-01);
+  padding: 100px;
+}
+
+.main-conteudo {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: var(--cor-bg-03);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+}
+
+.main-conteudo-img img {
+  border-radius: 20px;
+  margin-bottom: 40px;
+}
+
+.main-conteudo h1 {
+  font-family: var(--font-primaria);
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.main-conteudo .primari-text {
+  font-family: var(--font-segundaria);
+  color: var(--cor-texto-02);
+  margin-bottom: 20px;
+}
+
+@media (max-width: 400px) {
+  .main-bg {
+    padding: 0px;
+  }
+  .main-conteudo {
+    padding: 0;
+    border-radius: 0;
+    background-color: var(--cor-bg-04);
+  }
+  .main-conteudo h1 {
+    margin-bottom: 0px;
+  }
+
+  .main-conteudo-img img {
+    border-radius: 0;
+    margin-bottom: 0px;
+  }
+
+  .main-conteudo > *:not(.main-conteudo-img) {
+    padding: 30px;
+  }
+  .main-conteudo .primari-text {
+    margin-bottom: 0px;
+  }
+}
+
+.preparation-time {
+  padding: 20px;
+  background-color: var(--cor-destaque-03);
+  border-radius: 20px;
+  margin-bottom: 40px;
+}
+
+.preparation-time h2 {
+  color: var(--cor-destaque-02);
+  font-family: var(--font-segundaria);
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.preparation-time li {
+  font-family: var(--font-segundaria);
+  color: var(--cor-texto-02);
+  padding: 0 40px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.preparation-time span {
+  font-weight: 600;
+}
+.preparation-time li::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background-color: var(--cor-destaque-02);
+  position: absolute;
+  left: 10px;
+  border-radius: 50%;
+}
+
+@media (max-width: 400px) {
+  .preparation-time {
+    margin: 0px 20px 0px 20px;
+    padding: 20px;
+  }
+  .preparation-time li {
+    padding: 0px 0px 0px 40px;
+  }
+}
+
+.ingredients {
+  border-bottom: 1px solid var(--cor-texto-01);
+}
+
+.ingredients h2 {
+  font-family: var(--font-primaria);
+  font-weight: 400;
+  color: var(--cor-destaque-01);
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.ingredients ul {
+  margin-bottom: 30px;
+}
+
+.ingredients li {
+  font-family: var(--font-segundaria);
+  color: var(--cor-texto-02);
+  padding: 0 40px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.ingredients li::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background-color: var(--cor-destaque-01);
+  position: absolute;
+  left: 10px;
+  border-radius: 50%;
+}
+
+.instructions {
+  margin-top: 30px;
+  border-bottom: 1px solid var(--cor-texto-01);
+}
+
+.instructions h2 {
+  font-size: 1.8rem;
+  color: var(--cor-destaque-01);
+  font-family: var(--font-primaria);
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.instructions ol {
+  font-family: var(--font-segundaria);
+  color: var(--cor-texto-02);
+  list-style: none;
+  counter-reset: item;
+  margin-bottom: 30px;
+}
+
+.instructions li {
+  counter-increment: item;
+  position: relative;
+  padding-left: 3.5rem;
+  margin-bottom: 10px;
+}
+
+.instructions li::before {
+  content: counter(item) ".";
+  position: absolute;
+  left: 0;
+  color: var(--cor-destaque-01);
+  font-weight: bold;
+  width: 2rem;
+  text-align: right;
+}
+
+.instructions span {
+  font-weight: 600;
+}
+
+.nutritional {
+  margin-top: 20px;
+}
+
+.nutritional h2 {
+  font-family: var(--font-primaria);
+  font-weight: 400;
+  color: var(--cor-destaque-01);
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.nutritional p {
+  font-family: var(--font-segundaria);
+  color: var(--cor-texto-02);
+  margin-top: 20px;
+}
+
+.nutritional-container {
+  margin-left: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.nutritional-container2 p {
+  color: var(--cor-destaque-01);
+  font-weight: 600;
+}
+.nutritional-container p:not(:last-of-type) {
+  border-bottom: 1px solid var(--cor-texto-01);
+}
